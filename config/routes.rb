@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   resources :seats
 
   resources :users
-  resources :flights
-  resources :airplanes
+
+  resources :airplanes do
+    resources :flights
+  end
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'

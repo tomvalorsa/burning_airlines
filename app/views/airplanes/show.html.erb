@@ -17,3 +17,5 @@
 
 <%= link_to 'Edit', edit_airplane_path(@airplane) %> |
 <%= link_to 'Back', airplanes_path %>
+<%= link_to 'Add Flight', new_airplane_flight_path(@airplane.id) %>
+<%= link_to 'Show Flights', airplane_flights_path(@airplane.id) %>

@@ -1,4 +1,4 @@
-<%= form_for(@flight) do |f| %>
+<%= form_for [@airplane,@flight] do |f| %>
   <% if @flight.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@flight.errors.count, "error") %> prohibited this flight from being saved:</h2>
@@ -26,10 +26,6 @@
   <div class="field">
     <%= f.label :flight_date %><br>
     <%= f.datetime_select :flight_date %>
-  </div>
-  <div class="field">
-    <%= f.label :airplane_id %><br>
-    <%= f.number_field :airplane_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

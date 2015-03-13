@@ -16,6 +16,7 @@ class FlightsController < ApplicationController
 
   # GET /flights/new
   def new
+    @airplane = Airplane.find params[:airplane_id]
     @flight = Flight.new
   end
 
@@ -26,17 +27,11 @@ class FlightsController < ApplicationController
   # POST /flights
   # POST /flights.json
   def create
-    @flight = Flight.new(flight_params)
 
-    respond_to do |format|
-      if @flight.save
-        format.html { redirect_to @flight, notice: 'Flight was successfully created.' }
-        format.json { render :show, status: :created, location: @flight }
-      else
-        format.html { render :new }
-        format.json { render json: @flight.errors, status: :unprocessable_entity }
-      end
-    end
+    @airplane = Airplane.find params[:airplane_id]
+    @flight = @airplane.flights.new flight_params
+    @flight.update(:airplane_id => params[:airplane_id])
+    redirect_to "/airplanes/#{@airplane.id}/flights"
   end
 
   # PATCH/PUT /flights/1
