@@ -3,23 +3,31 @@ module ApplicationHelper
     links = 
       "<div class='nav-links-left'>
         <li>
-          #{ link_to('Burning Airlines', root_path) do fa_icon('plane', text: 'Burning ', right: true) end }
+          #{ link_to(root_path('Burning Airlines')) do fa_icon('paper-plane-o', text: 'Burning Airlines', right: true) end }
         </li>"
-    if @current_user.present?
+    if @current_user.present? && @current_user.is_admin?
       links += 
-        "<li class='nav-profile'>
-         #{ link_to(@current_user.name, root_path) do fa_icon('user', text: (@current_user.name + ' '), right: true) end }
+        "<li>#{ link_to('All users', root_path) }</li>
+        <li>#{ link_to('View planes', airplanes_path) }</li>
+        <li class='nav-profile'>
+          #{ link_to(root_path(@current_user.name)) do fa_icon('user', text: (@current_user.name + ' '), right: true) end }
         </li>
         <li>
-          #{ link_to(logout_path, title: 'Sign Out ', :method => :delete) }
+          #{ link_to(login_path, title: 'Sign Out ', :method => :delete) do fa_icon('sign-out', text: 'Sign out ', right: true) end }
         </li>
       </div>"
-    elsif @current_user.present? && @curent_user.is_admin?
+    elsif @current_user.present? 
       links += 
-        "<li>#{ link_to('All users', root_path) }</li></div>"
+        "<li class='nav-profile'>
+          #{ link_to(root_path(@current_user.name)) do fa_icon('user', text: (@current_user.name + ' '), right: true) end }
+        </li>
+        <li>
+          #{ link_to(login_path, title: 'Sign Out ', :method => :delete) do fa_icon('sign-out', text: 'Sign out ', right: true) end }
+        </li>
+      </div>"
     else 
         "<h1 class='nav-home'>
-          #{ link_to('Burning Airlines', root_path) do fa_icon('plane', text: 'Burning ', right: true) end }
+          #{ link_to(root_path('Burning Airlines')) do fa_icon('plane', text: 'Burning Airlines', right: true) end }
         </h1>"
     end
   end
