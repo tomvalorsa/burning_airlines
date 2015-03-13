@@ -1,6 +1,8 @@
 class FlightsController < ApplicationController
   before_action :set_flight, only: [:show, :edit, :update, :destroy]
 
+  before_action :check_if_admin, only: [:new, :create, :edit, :update, :destroy]
+
   # GET /flights
   # GET /flights.json
   def index
@@ -67,8 +69,12 @@ class FlightsController < ApplicationController
       @flight = Flight.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def flight_params
       params.require(:flight).permit(:flight_name, :origin, :destination, :flight_date, :airplane_id)
     end
+
+    def check_if_admin
+      redirect_to(login_path) unless @current_user.present? && @current_user.is_admin?
+    end
+
 end
