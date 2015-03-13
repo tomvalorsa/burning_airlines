@@ -31,6 +31,16 @@ class FlightsController < ApplicationController
     @airplane = Airplane.find params[:airplane_id]
     @flight = @airplane.flights.new flight_params
     @flight.update(:airplane_id => params[:airplane_id])
+
+    num_seats = @airplane.rows * @airplane.columns
+    num_seats.times do
+      # British Shareways? There's just one seat and everyone has to share
+      @flight.seats.create(
+        :flight_id => @flight.id
+      )
+    end
+
+
     redirect_to "/airplanes/#{@airplane.id}/flights"
   end
 
