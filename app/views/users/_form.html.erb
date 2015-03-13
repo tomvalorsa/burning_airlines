@@ -10,24 +10,23 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :autofocus => true, :required => true, :placeholder => 'Name'%>
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, :required => true, :placeholder => 'Email' %>
   </div>
-  <div class="field">
-    <%= f.label :password_digest %><br>
-    <%= f.text_field :password_digest %>
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, :required => true, :placeholder => 'Password' %>
   </div>
-  <div class="field">
-    <%= f.label :is_admin %><br>
-    <%= f.check_box :is_admin %>
+  <div class="form-group">
+    <%= f.label :password_confirmation, 'Confirm password' %>
+    <%= f.password_field :password_confirmation, :required => true, :placeholder => 'Confirm Password' %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit 'Sign up', :class => 'btn-form' %>
   </div>
 <% end %>
