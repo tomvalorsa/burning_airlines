@@ -1,6 +1,4 @@
 User.destroy_all
-Challenge.destroy_all
-Pledge.destroy_all
 
 # Seed data for Users
 u1 = User.create(:name => 'Liam', :email => 'liamdarmody@gmail.com', :password => 'chicken', :password_confirmation => 'chicken')
