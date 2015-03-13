@@ -13,4 +13,6 @@
 #
 
 class Flight < ActiveRecord::Base
+  belongs_to :airplane
+  has_many :seats
 end
