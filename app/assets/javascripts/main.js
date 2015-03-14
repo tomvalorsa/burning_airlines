@@ -3,7 +3,7 @@ var app = app || {};
 app.burningFlights = new app.Flights();
 
 $(document).ready(function() {
-  if ($'#main').length === 0 {
+  if ($('#main').length === 0) {
     return;
   };
 
