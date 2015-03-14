@@ -5,7 +5,7 @@ app.AppView = Backbone.View.extend({
   render: function () {
     var appViewHTML = $('#appView-template').html();
     this.$el.html(appViewHTML);
-    debugger;
+
     this.collection.each(function (flight) {
       var flightListView =  new app.FlightListView({model: flight});
       flightListView.render();

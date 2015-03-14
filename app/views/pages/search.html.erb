@@ -10,18 +10,34 @@
 
 <script id="appView-template" type="text/x-template">
   <h2>Flights</h2>
-  <ul id="flights"></ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Flight name</th>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th>Flight date</th>
+        <th>Airplane</th>
+      </tr>
+    </thead>
+    <tbody id="flights"></tbody>
+  </table>
 </script>
 
 <script id="flightListView-template" type="text/x-underscore-template">
-  <h3>{{ flight_name }}</h3>
-  // Still need to populate list below
-  <li></li>
-  <li></li>
-  <li></li>
+  <td>{{flight_name}}</td>
+  <td>{{origin}}</td>
+  <td>{{destination}}</td>
+  <td>{{flight_date}}</td> 
+  <td>{{airplane_id}}</td>
 </script>
+
+
 
 <script id="flightView-template" type="text/x-underscore-template">
   <h2>{{ flight_name }}</h2>
   // Add seats view
 </script>
+
+
+
