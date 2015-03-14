@@ -2,7 +2,9 @@ var app = app || {};
 
 app.FlightListView = Backbone.View.extend({
   tagName: 'tr',
-  events: {}, // Need to add events
+  events: {
+    'click': 'showFlight'
+  },
   render: function() {
      var flightListViewTemplate = $('#flightListView-template').html();
      var flightListViewHTML = _.template(flightListViewTemplate);
