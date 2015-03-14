@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore
+//= require moment
 //= require backbone
 //= require_tree ./models
 //= require_tree ./collections
