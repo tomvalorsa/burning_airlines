@@ -2,10 +2,11 @@ var app = app || {};
 
 app.AppRouter = Backbone.Router.extend({
   routes: {
-    'search': 'index',
+    '': 'index',
     'flights/:id': 'viewFlight'
   },
   index: function() {
+    debugger;
     var appView = new app.AppView({collection: app.burningFlights});
     appView.render();
   },
