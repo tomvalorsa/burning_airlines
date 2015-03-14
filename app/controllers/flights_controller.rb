@@ -6,9 +6,13 @@ class FlightsController < ApplicationController
   # GET /flights
   # GET /flights.json
   def index
-    airplane = Airplane.find params[:airplane_id]
-    flights = Flight.all
-    render :json => airplane.flights
+    @flights = Flight.all
+
+    respond_to do |format|
+      format.html {}
+      # format.json { render :json => @flights }
+      format.json { render :json => @flights }
+    end
   end
 
   # GET /flights/1

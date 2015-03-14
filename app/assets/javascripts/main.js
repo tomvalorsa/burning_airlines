@@ -10,7 +10,7 @@ $(document).ready(function() {
   _.templateSettings = {
     interpolate: /\{\{(.+?)\}\}/g
   };
-
+  // debugger;
   app.burningFlights.fetch().done(function () {
     app.appRouter = new app.AppRouter();
     Backbone.history.start()
