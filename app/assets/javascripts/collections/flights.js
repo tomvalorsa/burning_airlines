@@ -2,7 +2,7 @@ var app = app || {};
 
 app.Flights = Backbone.Collection.extend({
   url: function () {
-    return '/airplanes/' + 1 + '/flights';
+    return '/airplanes/' + 'burning_airlines_sucks' + '/flights';
   }
 });
 

@@ -6,7 +6,6 @@ app.AppRouter = Backbone.Router.extend({
     'flights/:id': 'viewFlight'
   },
   index: function() {
-    debugger;
     var appView = new app.AppView({collection: app.burningFlights});
     appView.render();
   },
