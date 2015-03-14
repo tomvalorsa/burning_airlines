@@ -34,7 +34,7 @@
 
 <script id="flightView-template" type="text/x-underscore-template">
   <h2>Flight {{ flight_name }}</h2>
-  <p><span class="flight-details">{{origin}}</span> to <span class="flight-details">{{destination}}</span> departs at <span class="flight-details">{{moment(Date.parseInt(flight_date)).format('h:mm a')}}</span> on <span class="flight-details">{{moment(Date.parse(flight_date)).format('ddd DD MMM, YYYY')}}</span></p>
+  <p><span class="flight-details">{{origin}}</span> to <span class="flight-details">{{destination}}</span> departs at <span class="flight-details">{{moment(Date.parse(flight_date)).format('h:mm a')}}</span> on <span class="flight-details">{{moment(Date.parse(flight_date)).format('ddd DD MMM, YYYY')}}</span></p>
 </script>
 
 
