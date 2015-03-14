@@ -1,12 +1,17 @@
 class AirplanesController < ApplicationController
   before_action :set_airplane, only: [:show, :edit, :update, :destroy]
 
-  before_action :check_if_admin
+  # before_action :check_if_admin
 
   # GET /airplanes
   # GET /airplanes.json
   def index
     @airplanes = Airplane.all
+    respond_to do |format|
+      format.html {}
+      # format.json { render :json => @flights }
+      format.json { render :json => @airplanes }
+    end
   end
 
   # GET /airplanes/1

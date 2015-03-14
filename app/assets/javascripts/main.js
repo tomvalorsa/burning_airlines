@@ -1,6 +1,7 @@
 var app = app || {};
 
 app.burningFlights = new app.Flights();
+app.burningAirplanes = new app.Airplanes();
 
 $(document).ready(function() {
   if ($('#main').length === 0) {
@@ -12,8 +13,10 @@ $(document).ready(function() {
   };
 
   app.burningFlights.fetch().done(function () {
-    app.appRouter = new app.AppRouter();
-    Backbone.history.start()
-  });
+    app.burningAirplanes.fetch().done(function() {
+      app.appRouter = new app.AppRouter();
+      Backbone.history.start()
+    })
 
+  });
 });
