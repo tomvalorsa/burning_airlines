@@ -27,14 +27,14 @@
   <td><a href="#">{{flight_name}}</a></td>
   <td>{{origin}}</td>
   <td>{{destination}}</td>
-  <td>{{moment(parseInt(flight_date)).format('ddd DD MMM, YYYY')}}</td>
-  <td>{{moment(parseInt(flight_date)).format('h:mm a')}}</td>
+  <td>{{moment(Date.parse(flight_date)).format('ddd DD MMM, YYYY')}}</td>
+  <td>{{moment(Date.parse(flight_date)).format('h:mm a')}}</td>
   <td>{{airplane_id}}</td>
 </script>
 
 <script id="flightView-template" type="text/x-underscore-template">
   <h2>Flight {{ flight_name }}</h2>
-  <p><span class="flight-details">{{origin}}</span> to <span class="flight-details">{{destination}}</span> departs at <span class="flight-details">{{moment(parseInt(flight_date)).format('h:mm a')}}</span> on <span class="flight-details">{{moment(parseInt(flight_date)).format('ddd DD MMM, YYYY')}}</span></p>
+  <p><span class="flight-details">{{origin}}</span> to <span class="flight-details">{{destination}}</span> departs at <span class="flight-details">{{moment(Date.parseInt(flight_date)).format('h:mm a')}}</span> on <span class="flight-details">{{moment(Date.parse(flight_date)).format('ddd DD MMM, YYYY')}}</span></p>
 </script>
 
 

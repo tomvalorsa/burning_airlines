@@ -45,8 +45,6 @@ class FlightsController < ApplicationController
         :flight_id => @flight.id
       )
     end
-
-
     redirect_to "/airplanes/#{@airplane.id}/flights"
   end
 
