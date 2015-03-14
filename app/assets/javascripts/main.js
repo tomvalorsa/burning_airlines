@@ -13,7 +13,6 @@ $(document).ready(function() {
 
   app.burningFlights.fetch().done(function () {
     app.appRouter = new app.AppRouter();
-
     Backbone.history.start()
   });
 

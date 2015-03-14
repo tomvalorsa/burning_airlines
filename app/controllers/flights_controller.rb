@@ -1,12 +1,14 @@
 class FlightsController < ApplicationController
   before_action :set_flight, only: [:show, :edit, :update, :destroy]
 
-  before_action :check_if_admin, only: [:new, :create, :edit, :update, :destroy]
+  # before_action :check_if_admin, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /flights
   # GET /flights.json
   def index
-    @flights = Flight.all
+    airplane = Airplane.find params[:airplane_id]
+    flights = Flight.all
+    render :json => airplane.flights
   end
 
   # GET /flights/1
@@ -81,5 +83,4 @@ class FlightsController < ApplicationController
     def check_if_admin
       redirect_to(login_path) unless @current_user.present? && @current_user.is_admin?
     end
-
 end
