@@ -16,6 +16,5 @@ app.FlightListView = Backbone.View.extend({
   showFlight: function (event) {
     event.preventDefault();
     app.appRouter.navigate('/flights/' + this.model.get('id'), true);
-    var seats = _.each()
   }
 });
