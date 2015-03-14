@@ -1,3 +1,76 @@
-// Place all the styles related to the Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  margin: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  background-color: #FBFBF9;
+  font-family: Helvetica, arial, sans-serif;
+}
+
+#main {
+  max-width: 960px;
+  background-color: #FBFBF9;
+  margin: 0 auto;
+
+}
+
+header {
+  background-color: #FBFBF9;
+  border-bottom: 3px solid #1E587D;
+  text-transform: uppercase;
+}
+
+h1 {
+  display: inline-block;
+  width: 30%;
+  margin: 0;
+  padding-left: 1em;
+  vertical-align: middle;
+  color: #1E587D;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  display: inline-block;
+  width: 65%;
+  text-align: right;
+}
+
+nav a {
+  font-size: 1em;
+  font-weight: 700;
+  color: #1E587D;
+  vertical-align: middle;
+  &:hover {
+    color: #0088cc;
+  }
+  &:visited {
+    color: #1E587D;
+  }
+}
+
+nav li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 1em 1.5em;
+}
+
+.fa-fire {
+  color: #FF0000;
+}
+#main h2 {
+  margin: 1.5em auto;
+}
+
+table {
+  margin: 0 auto;
+  min-width: 80%;
+}
+
+tr {
+  text-align: left;
+}
