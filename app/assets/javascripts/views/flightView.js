@@ -59,6 +59,8 @@ app.FlightView = Backbone.View.extend({
     var isReserved;
     if (target.classList.contains('reserved')) {
       isReserved = true;
+    } else {
+      isReserved = false;
     }
 
    var newSeat = new app.Seat({
