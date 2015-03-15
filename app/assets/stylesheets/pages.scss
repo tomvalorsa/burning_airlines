@@ -88,4 +88,15 @@ tr {
   height: 80px;
   width: 80px;
   display: inline-block;
+  &:hover {
+    background-color: pink;
+  }
+}
+
+.unreserved {
+  background-color: green;
+}
+
+.reserved {
+  background-color: red;
 }
