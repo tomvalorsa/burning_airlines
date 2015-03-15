@@ -74,3 +74,10 @@ table {
 tr {
   text-align: left;
 }
+
+.column {
+  border: 1px solid black;
+  height: 80px;
+  width: 80px;
+  display: inline-block;
+}
