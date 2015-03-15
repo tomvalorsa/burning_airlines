@@ -11,13 +11,6 @@ app.FlightView = Backbone.View.extend({
     // debugger;
     this.$el.html(flightViewHTML(this.model.toJSON()));
 
-
-    // // Save the actual flight object to a var
-    // var flightDetails = this.model.toJSON();
-
-    // // Airplane ID in a var
-    // var airplane = flightDetails.airplane_id;
-
     var seatViewTemplate = $('#seatView-template').html();
     var seatViewHTML = _.template(seatViewTemplate);
 
@@ -29,14 +22,6 @@ app.FlightView = Backbone.View.extend({
     console.log(rows)
     var columns = plane.attributes.columns
     console.log(columns);
-
-    // _.each(rows, function(row) {
-    //   _.each(row.columns, function(column){
-    //     console.log('hello');
-    //   });
-    // });
-
-    // var i, j;
 
     for (i = 0; i < rows; i++) {
       // make div for the row, give id of row-i
@@ -51,16 +36,12 @@ app.FlightView = Backbone.View.extend({
       }
       $('#main').append(row);
     }
-
-
     // give the rows and columns ids using the value of i so they are all unique
     // all need to be appended to seat-grid
     // columns need to be appended to relevant row
 
   },
   reserveSeat: function (e) {
-
-
     var target = e.target;
     // Toggles class of 'reserved'.
     target.classList.toggle('reserved')
@@ -80,5 +61,12 @@ app.FlightView = Backbone.View.extend({
       isReserved = true;
     }
 
+   var newSeat = new app.Seat({
+      row: seatRow,
+      column: seatColumn,
+      user_id: $p,
+      reserved: isReserved
+    });
+   newSeat.save({patch:true});
   }
 });
