@@ -17,7 +17,7 @@ body {
 
 header {
   background-color: #FBFBF9;
-  border-bottom: 3px solid #1E587D;
+  border-bottom: 1px solid #FBFBF9;
   text-transform: uppercase;
 }
 
@@ -34,34 +34,7 @@ a {
   text-decoration: none;
 }
 
-nav {
-  display: inline-block;
-  width: 65%;
-  text-align: right;
-}
 
-nav a {
-  font-size: 1em;
-  font-weight: 700;
-  color: #1E587D;
-  vertical-align: middle;
-  &:hover {
-    color: #0088cc;
-  }
-  &:visited {
-    color: #1E587D;
-  }
-}
-
-nav li {
-  display: inline-block;
-  list-style-type: none;
-  padding: 1em 1.5em;
-}
-
-.fa-fire {
-  color: #FF0000;
-}
 #main h2 {
   margin: 1.5em auto;
 }
