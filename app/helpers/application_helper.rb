@@ -17,6 +17,9 @@ module ApplicationHelper
           #{ link_to(root_path) do fa_icon('user', text: (@current_user.name + ' '), right: true) end }
         </li>
         <li>
+          #{ link_to(search_path) do fa_icon('search', text: 'Search', right: true) end }
+        </li>
+        <li>
           #{ link_to(login_path, title: 'Sign Out ', :method => :delete) do fa_icon('sign-out', text: 'Sign out ', right: true) end }
         </li>
       </div>"
