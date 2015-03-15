@@ -46,7 +46,7 @@ app.FlightView = Backbone.View.extend({
       for (j = 0; j < columns; j++) {
         // make div for each column, give id of column-j
         // append each to div with id=row-i
-        var column = $('<div class="column" id="column-' + (j + 1) + '"></div>');
+        var column = $('<div class="column unreserved" data-row="' + (i + 1) + '" data-column="' + (j + 1) + '" id="column-' + (j + 1) + '"></div>');
         $(row).append(column);
       }
       $('#main').append(row);
