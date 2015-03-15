@@ -59,7 +59,7 @@ app.FlightView = Backbone.View.extend({
 
   },
   reserveSeat: function (e) {
-    // debugger;
+
 
     var target = e.target;
     // Toggles class of 'reserved'.
@@ -74,7 +74,11 @@ app.FlightView = Backbone.View.extend({
     var seatRow = target.getAttribute('data-row');
     var seatColumn = target.getAttribute('data-column');
 
-    // If the classlist contains/includes 'reserved' then make reserved = true (in db)
+    // Saves the desired value for 'reserved' in the db into a variable.
+    var isReserved;
+    if (target.classList.contains('reserved')) {
+      isReserved = true;
+    }
 
   }
 });
