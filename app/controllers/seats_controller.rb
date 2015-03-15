@@ -1,5 +1,5 @@
 class SeatsController < ApplicationController
-  before_action :set_seat, only: [:show, :edit, :update, :destroy]
+  # before_action :set_seat, only: [:show, :edit, :update, :destroy]
 
   # GET /seats
   # GET /seats.json
@@ -40,15 +40,17 @@ class SeatsController < ApplicationController
   # PATCH/PUT /seats/1
   # PATCH/PUT /seats/1.json
   def update
-    respond_to do |format|
-      if @seat.update(seat_params)
-        format.html { redirect_to @seat, notice: 'Seat was successfully updated.' }
-        format.json { render :show, status: :ok, location: @seat }
-      else
-        format.html { render :edit }
-        format.json { render json: @seat.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @seat.update(seat_params)
+    #     format.html { redirect_to @seat, notice: 'Seat was successfully updated.' }
+    #     format.json { render :show, status: :ok, location: @seat }
+    #   else
+    #     format.html { render :edit }
+    #     format.json { render json: @seat.errors, status: :unprocessable_entity }
+    #   end
+    # end
+    seat = Seat.update seat_params
+    render :json => seat
   end
 
   # DELETE /seats/1
@@ -63,9 +65,9 @@ class SeatsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_seat
-      @seat = Seat.find(params[:id])
-    end
+    # def set_seat
+    #   @seat = Seat.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def seat_params

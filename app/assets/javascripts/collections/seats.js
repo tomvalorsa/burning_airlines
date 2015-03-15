@@ -1,5 +1,8 @@
 var app = app || {};
 
 app.Seats = Backbone.Collection.extend({
-  url: '/seats'
+    url: function () {
+    return '/seats'
+  },
+  model: app.Seat
 });
