@@ -3,7 +3,7 @@ var app = app || {};
 app.FlightView = Backbone.View.extend({
   el: '#main',
   events: {
-    'click': 'drawSeats'
+    'click .column': 'reserveSeat'
   },
   render: function () {
     var flightViewTemplate = $('#flightView-template').html();
@@ -56,6 +56,25 @@ app.FlightView = Backbone.View.extend({
     // give the rows and columns ids using the value of i so they are all unique
     // all need to be appended to seat-grid
     // columns need to be appended to relevant row
+
+  },
+  reserveSeat: function (e) {
+    // debugger;
+
+    var target = e.target;
+    // Toggles class of 'reserved'.
+    target.classList.toggle('reserved')
+
+    // Needs to send user_id and seat row and col back to the server.
+
+    // Gets user ID.
+    var $p = $('#current-user-id')[0].innerText;
+
+    // Gets the seat row and column values.
+    var seatRow = target.getAttribute('data-row');
+    var seatColumn = target.getAttribute('data-column');
+
+    // If the classlist contains/includes 'reserved' then make reserved = true (in db)
 
   }
 });
