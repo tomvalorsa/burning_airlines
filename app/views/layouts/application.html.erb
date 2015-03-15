@@ -12,12 +12,38 @@
   </head>
   <body>
     <header>
-      <h1 >Burning Airlines <i class="fa fa-plane"></i><i class="fa fa-fire"></i></h1>
-      <nav class="main-nav">
-        <ul>
-        <%== nav_menu %>
-        </ul>
-      </nav>
+      <!-- <h1 >Burning Airlines <i class="fa fa-plane"></i><i class="fa fa-fire"></i></h1> -->
+      <div class="custom-menu-wrapper">
+          <div class="pure-menu custom-menu custom-menu-top">
+              <a href="#" class="pure-menu-heading custom-menu-brand">Burning Airlines <i class="fa fa-plane"></i><i class="fa fa-fire"></i></a>
+              <a href="#" class="custom-menu-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
+          </div>
+          <div class="pure-menu pure-menu-horizontal pure-menu-scrollable custom-menu custom-menu-bottom custom-menu-tucked" id="tuckedMenu">
+              <!-- <div class="custom-menu-screen"></div> -->
+              <ul class="pure-menu-list">
+                  <%== nav_menu %>
+              </ul>
+          </div>
+      </div>
+      <script>
+      (function (window, document) {
+      document.getElementById('toggle').addEventListener('click', function (e) {
+          document.getElementById('tuckedMenu').classList.toggle('custom-menu-tucked');
+          document.getElementById('toggle').classList.toggle('x');
+      });
+      })(this, this.document);
+      </script>
+
+
+
+
+
+
+
+
+
+
+
     </header>
 
 
