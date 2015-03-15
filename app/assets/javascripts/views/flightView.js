@@ -30,32 +30,25 @@ app.FlightView = Backbone.View.extend({
     var columns = plane.attributes.columns
     console.log(columns);
 
-    _.each(rows, function(row) {
-      _.each(row.columns, function(column){
-        console.log('hello');
-      });
-    });
+    // _.each(rows, function(row) {
+    //   _.each(row.columns, function(column){
+    //     console.log('hello');
+    //   });
+    // });
 
-    var i, j;
+    // var i, j;
 
     for (i = 0; i < rows; i++) {
       // make div for the row, give id of row-i
       // might need to be i + 1
-      var row = $('<div class="row" id="row-' + (i + 1) + '"></div>');
+      var row = $('<div id="row-' + (i + 1) + '" class="row"></div>');
 
       for (j = 0; j < columns; j++) {
         // make div for each column, give id of column-j
         // append each to div with id=row-i
-        debugger;
-        var column = $('<div class="column" id="row-' + (i + 1) + '-column-' + (j + 1) + '"></div>');
-        var rowID = '#row-' + (i.toString());
-        console.log('i', i);
-        console.log('j', j);
-        console.log('row ID', rowID);
-        console.log(column);
-        $(rowID).append(column);
+        var column = $('<div class="column" id="column-' + (j + 1) + '"></div>');
+        $(row).append(column);
       }
-
       $('#main').append(row);
     }
 
