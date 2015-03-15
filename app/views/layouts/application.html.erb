@@ -5,6 +5,10 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
+    <meta content='<%= @current_user.present? ? @current_user.id : "" %>' name='user-id'/>
+
+ <!-- <body class='<%= @current_user.present? ? "logged_in" : "logged_out" %>'> -->
   </head>
   <body>
     <header>
@@ -42,6 +46,8 @@
 
     </header>
 
+
+  <p id="current-user-id"><%= @current_user.id %></p>
   <%= yield %>
 
   </body>
