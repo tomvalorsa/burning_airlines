@@ -37,5 +37,9 @@
   <p><span class="flight-details">{{origin}}</span> to <span class="flight-details">{{destination}}</span> departs at <span class="flight-details">{{moment(Date.parse(flight_date)).format('h:mm a')}}</span> on <span class="flight-details">{{moment(Date.parse(flight_date)).format('ddd DD MMM, YYYY')}}</span></p>
 </script>
 
-
+<script id="seatView-template" type="text/x-underscore-template">
+  <div id="seat-grid">
+    
+  </div>
+</script>
 
