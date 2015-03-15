@@ -1,32 +1,34 @@
 <% @user = @user || User.new %>
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for(@user, :html => {:class => 'pure-form pure-form-aligned'}) do |f| %>
+  <fieldset>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="pure-control-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, :autofocus => true, :required => true, :placeholder => 'Name'%>
     </div>
-  <% end %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, :autofocus => true, :required => true, :placeholder => 'Name'%>
-  </div>
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, :required => true, :placeholder => 'Email' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, :required => true, :placeholder => 'Password' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password_confirmation, 'Confirm password' %>
-    <%= f.password_field :password_confirmation, :required => true, :placeholder => 'Confirm Password' %>
-  </div>
-  <div class="form-group">
-    <%= f.submit 'Sign up', :class => 'btn-form' %>
-  </div>
+    <div class="pure-control-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, :required => true, :placeholder => 'Email' %>
+    </div>
+    <div class="pure-control-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, :required => true, :placeholder => 'Password' %>
+    </div>
+    <div class="pure-control-group">
+      <%= f.label :password_confirmation, 'Confirm password' %>
+      <%= f.password_field :password_confirmation, :required => true, :placeholder => 'Confirm Password' %>
+    </div>
+    <div class="pure-controls">
+      <%= f.submit 'Sign Up', :class => 'pure-button pure-button-primary' %>
+    </div>
+  </fieldset>
 <% end %>
